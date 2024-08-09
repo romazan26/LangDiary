@@ -85,6 +85,11 @@ struct Registrationview: View {
         .onTapGesture {
             keyboardIsFocus = false
         }
+        .onAppear(perform: {
+            if !vm.users.isEmpty{
+                vm.isPresentLangDiary = true
+            }
+        })
     }
 }
 

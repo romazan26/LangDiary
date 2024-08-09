@@ -25,13 +25,47 @@ final class MainViewModel: ObservableObject{
     @Published var simpleTeacherName = ""
     @Published var simpleTeacherSerName = ""
     @Published var simpleTeacherPhoto: UIImage = UIImage(resource: .noFotoTeacher)
+    @Published var simpleTeacher: Teacher!
     
+    //Is present
     @Published var isPresentAddteacher = false
+    @Published var isPresentEdiiteteacher = false
     @Published var isPresentedPiker = false
+    @Published var isPresentedAllTeacher = false
+    @Published var isPresentSetting = false
+    @Published var isPresentHomeWork = false
     
     init(){
         getTeachers()
         getWords()
+    }
+    
+    //MARK: - 
+    
+    //MARK: - Update data
+    func updateTeacher(){
+        let request = NSFetchRequest<Teacher>(entityName: "Teacher")
+        
+        do{
+            teachers = try manager.context.fetch(request)
+            let teacher = teachers.first(where: {$0.id == simpleTeacher.id})
+            teacher?.name = simpleTeacherName
+            teacher?.serName = simpleTeacherSerName
+            teacher?.photo = simpleTeacherPhoto
+        }catch let error{
+            print("Get data error \(error.localizedDescription)")
+        }
+        
+        save()
+        clearDataTeacher()
+    }
+    
+    //MARK: - fiilData
+    func fillData(){
+        simpleTeacherName = simpleTeacher.name ?? ""
+        simpleTeacherSerName = simpleTeacher.serName ?? ""
+        simpleTeacherPhoto = simpleTeacher.photo ?? UIImage(resource: .noFoto)
+        
     }
     
     //MARK: - Add Data

@@ -11,6 +11,8 @@ import PhotosUI
 struct AddTeacherView: View {
     @StateObject var vm: MainViewModel
     
+    var isEdite = false
+    
     @FocusState private var keyboardIsFocus: Bool
     
     var config: PHPickerConfiguration {
@@ -31,7 +33,11 @@ struct AddTeacherView: View {
                 //MARK: - Top tool bar
                 HStack {
                     Button(action: {
-                        vm.isPresentAddteacher.toggle()
+                        if isEdite{
+                            vm.isPresentEdiiteteacher.toggle()
+                        }else{
+                            vm.isPresentAddteacher.toggle()
+                        }
                         vm.clearDataTeacher()
                     }, label: {
                         Image(systemName: "chevron.left")
@@ -83,17 +89,30 @@ struct AddTeacherView: View {
                 
                 
                 Spacer()
+                
+                //MARK: - Save button
                 Button(action: {
-                    vm.addTeacher()
-                    vm.isPresentAddteacher.toggle()
+                    if isEdite{
+                        vm.updateTeacher()
+                        vm.isPresentEdiiteteacher.toggle()
+                    }else{
+                        vm.addTeacher()
+                        vm.isPresentAddteacher.toggle()
+                    }
+                    
                 }, label: {
-                    CustomButtonView(text: "Add")
+                    CustomButtonView(text: isEdite ? "Save" : "Add")
                 })
                 
             }.padding()
         }.onTapGesture {
             keyboardIsFocus = false
-        }
+        }.onAppear(perform: {
+            print(isEdite)
+            if isEdite {
+                vm.fillData()
+            }
+        })
     }
 }
 

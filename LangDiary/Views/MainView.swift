@@ -53,7 +53,7 @@ struct MainView: View {
                     
                     Spacer()
                     
-                    Button(action: {}, label: {
+                    Button(action: {vm.isPresentSetting.toggle()}, label: {
                         Image(systemName: "gearshape.fill")
                             .resizable()
                             .foregroundColor(.gray)
@@ -74,7 +74,7 @@ struct MainView: View {
                         .foregroundStyle(.white)
                         .font(.system(size: 20, weight: .heavy))
                      Spacer()
-                    Button(action: {}, label: {
+                    Button(action: {vm.isPresentedAllTeacher.toggle()}, label: {
                         Text("See all").foregroundStyle(.gray)
                     })
                 }.padding(.top)
@@ -139,14 +139,24 @@ struct MainView: View {
                         CircleButtonView(image: .grafics)
                     })
                     Spacer()
-                    Button(action: {}, label: {
+                    Button(action: {vm.isPresentHomeWork.toggle()}, label: {
                         CircleButtonView(image: .homeworks)
                     })
                 }
             }.padding()
         }
+        //MARK: - screen cover
         .sheet(isPresented: $vm.isPresentAddteacher, content: {
             AddTeacherView(vm: vm)
+        })
+        .fullScreenCover(isPresented: $vm.isPresentedAllTeacher, content: {
+            TeacherView(vm: vm)
+        })
+        .fullScreenCover(isPresented: $vm.isPresentSetting, content: {
+            SettingsView()
+        })
+        .fullScreenCover(isPresented: $vm.isPresentHomeWork, content: {
+            HomeWorkView(vm: vm)
         })
     }
 }
