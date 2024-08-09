@@ -29,6 +29,9 @@
 		30033BE92C661383007DBE0A /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BE82C661383007DBE0A /* Teacher.swift */; };
 		30033BEB2C661468007DBE0A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BEA2C661468007DBE0A /* MainViewModel.swift */; };
 		30033BEE2C661BF3007DBE0A /* AddTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BED2C661BF3007DBE0A /* AddTeacherView.swift */; };
+		30033BF72C664852007DBE0A /* WordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BF62C664852007DBE0A /* WordCellView.swift */; };
+		30033BF92C664B0D007DBE0A /* WordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BF82C664B0D007DBE0A /* WordTextFieldView.swift */; };
+		30033BFB2C664D44007DBE0A /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BFA2C664D44007DBE0A /* CircleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		30033BE82C661383007DBE0A /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		30033BEA2C661468007DBE0A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		30033BED2C661BF3007DBE0A /* AddTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherView.swift; sourceTree = "<group>"; };
+		30033BF62C664852007DBE0A /* WordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCellView.swift; sourceTree = "<group>"; };
+		30033BF82C664B0D007DBE0A /* WordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTextFieldView.swift; sourceTree = "<group>"; };
+		30033BFA2C664D44007DBE0A /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,8 @@
 				30033BD22C65FA90007DBE0A /* CustomButtonView.swift */,
 				30033BD02C65FA16007DBE0A /* CustomTextFieldView.swift */,
 				30033BC82C65F2BD007DBE0A /* LoadingProgressBarView.swift */,
+				30033BF82C664B0D007DBE0A /* WordTextFieldView.swift */,
+				30033BFA2C664D44007DBE0A /* CircleButtonView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				30033BE62C6611FC007DBE0A /* TeacherCell.swift */,
+				30033BF62C664852007DBE0A /* WordCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -260,13 +269,16 @@
 				30033BEE2C661BF3007DBE0A /* AddTeacherView.swift in Sources */,
 				30033BDC2C65FB68007DBE0A /* LangDiary.xcdatamodeld in Sources */,
 				30033BE72C6611FC007DBE0A /* TeacherCell.swift in Sources */,
+				30033BF92C664B0D007DBE0A /* WordTextFieldView.swift in Sources */,
 				30033BCF2C65F9E4007DBE0A /* RegistrationViewModel.swift in Sources */,
 				30033BCC2C65F9C8007DBE0A /* Registrationview.swift in Sources */,
 				30033BDE2C65FEA4007DBE0A /* PhotoPicker.swift in Sources */,
 				30033BE92C661383007DBE0A /* Teacher.swift in Sources */,
 				30033BB02C65EBAF007DBE0A /* AppDelegate.swift in Sources */,
 				30033BB22C65EBAF007DBE0A /* SceneDelegate.swift in Sources */,
+				30033BFB2C664D44007DBE0A /* CircleButtonView.swift in Sources */,
 				30033BE42C6606D0007DBE0A /* MainView.swift in Sources */,
+				30033BF72C664852007DBE0A /* WordCellView.swift in Sources */,
 				30033BD92C65FB25007DBE0A /* CoreDataManager.swift in Sources */,
 				30033BEB2C661468007DBE0A /* MainViewModel.swift in Sources */,
 			);

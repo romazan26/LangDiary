@@ -11,4 +11,7 @@
         <attribute name="photo" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
         <attribute name="serName" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
 </model>

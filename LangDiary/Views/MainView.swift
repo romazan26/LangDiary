@@ -82,7 +82,7 @@ struct MainView: View {
                 //MARK: - Teacher List
                 HStack {
                     ForEach(vm.teachers.prefix(3)) { teacher in
-                        TeacherCell(teacher: teacher, width: 73, height: 100)
+                        TeacherCell(teacher: teacher, width: 73, height: 100).padding(5)
                     }
                     Button(action: {vm.isPresentAddteacher.toggle()}, label: {
                         Image(.addteacher)
@@ -91,8 +91,58 @@ struct MainView: View {
                     })
                     Spacer()
                 }
-                Spacer()
                 
+                //MARK: - Words list
+                HStack{
+                    HStack{
+                        Text("New word \(vm.words.count)")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 20, weight: .heavy))
+                         Spacer()
+                        if vm.isAddWord{
+                            Button(action: {
+                                vm.isAddWord.toggle()
+                                vm.addAllWords()
+                            }, label: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .resizable()
+                                    .frame(width: 34, height: 34)
+                                    .foregroundStyle(.orangeApp)
+                            })
+                        }else{
+                            Button(action: {vm.isAddWord.toggle()}, label: {
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 34, height: 34)
+                                    .foregroundStyle(.orangeApp)
+                            })
+                        }
+                    }.padding(.top)
+                }
+                if vm.isAddWord{
+                    HStack(spacing: 20){
+                        WordTextFieldView(text: $vm.simpleWord1)
+                        WordTextFieldView(text: $vm.simpleWord2)
+                    }
+                }
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(), GridItem()], content: {
+                        ForEach(vm.words) { word in
+                            WordCellView(word: word)
+                        }
+                    })
+                }
+                Spacer()
+                //MARK: - Homework button
+                HStack{
+                    Button(action: {}, label: {
+                        CircleButtonView(image: .grafics)
+                    })
+                    Spacer()
+                    Button(action: {}, label: {
+                        CircleButtonView(image: .homeworks)
+                    })
+                }
             }.padding()
         }
         .sheet(isPresented: $vm.isPresentAddteacher, content: {
