@@ -31,6 +31,7 @@ struct Registrationview: View {
                     .font(.system(size: 37, weight: .heavy))
                     .padding(.vertical)
                 
+                //MARK: - Photo
                     Button {
                         vm.isPresentedPiker.toggle()
                     } label: {

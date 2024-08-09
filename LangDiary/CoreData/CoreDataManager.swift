@@ -15,7 +15,7 @@ final class CoreDataManager {
     let context: NSManagedObjectContext
     
     init() {
-        container = NSPersistentContainer(name: "FastTrack")
+        container = NSPersistentContainer(name: "LangDiary")
         container.loadPersistentStores { descption, error in
             if let error = error{
                 print("Error looading core data\(error)")

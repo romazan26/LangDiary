@@ -25,6 +25,10 @@
 		30033BE02C660403007DBE0A /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BDF2C660403007DBE0A /* UIImageTransformer.swift */; };
 		30033BE22C66042D007DBE0A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BE12C66042D007DBE0A /* User.swift */; };
 		30033BE42C6606D0007DBE0A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BE32C6606D0007DBE0A /* MainView.swift */; };
+		30033BE72C6611FC007DBE0A /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BE62C6611FC007DBE0A /* TeacherCell.swift */; };
+		30033BE92C661383007DBE0A /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BE82C661383007DBE0A /* Teacher.swift */; };
+		30033BEB2C661468007DBE0A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BEA2C661468007DBE0A /* MainViewModel.swift */; };
+		30033BEE2C661BF3007DBE0A /* AddTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BED2C661BF3007DBE0A /* AddTeacherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		30033BDF2C660403007DBE0A /* UIImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		30033BE12C66042D007DBE0A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30033BE32C6606D0007DBE0A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		30033BE62C6611FC007DBE0A /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
+		30033BE82C661383007DBE0A /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		30033BEA2C661468007DBE0A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		30033BED2C661BF3007DBE0A /* AddTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 		30033BAE2C65EBAF007DBE0A /* LangDiary */ = {
 			isa = PBXGroup;
 			children = (
+				30033BE52C6611EB007DBE0A /* Cells */,
 				30033BD42C65FAB7007DBE0A /* CoreData */,
 				30033BCD2C65F9D7007DBE0A /* ViewModels */,
 				30033BC72C65F294007DBE0A /* Helpers */,
@@ -98,6 +107,7 @@
 		30033BC32C65EEDD007DBE0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30033BEC2C661BE3007DBE0A /* Teacher */,
 				30033BCA2C65F99D007DBE0A /* Registration */,
 				30033BC42C65EEF7007DBE0A /* Loading */,
 				30033BE32C6606D0007DBE0A /* MainView.swift */,
@@ -136,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				30033BCE2C65F9E4007DBE0A /* RegistrationViewModel.swift */,
+				30033BEA2C661468007DBE0A /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -147,8 +158,25 @@
 				30033BDA2C65FB68007DBE0A /* LangDiary.xcdatamodeld */,
 				30033BDF2C660403007DBE0A /* UIImageTransformer.swift */,
 				30033BE12C66042D007DBE0A /* User.swift */,
+				30033BE82C661383007DBE0A /* Teacher.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		30033BE52C6611EB007DBE0A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30033BE62C6611FC007DBE0A /* TeacherCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		30033BEC2C661BE3007DBE0A /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				30033BED2C661BF3007DBE0A /* AddTeacherView.swift */,
+			);
+			path = Teacher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,14 +257,18 @@
 				30033BD32C65FA90007DBE0A /* CustomButtonView.swift in Sources */,
 				30033BD12C65FA16007DBE0A /* CustomTextFieldView.swift in Sources */,
 				30033BE22C66042D007DBE0A /* User.swift in Sources */,
+				30033BEE2C661BF3007DBE0A /* AddTeacherView.swift in Sources */,
 				30033BDC2C65FB68007DBE0A /* LangDiary.xcdatamodeld in Sources */,
+				30033BE72C6611FC007DBE0A /* TeacherCell.swift in Sources */,
 				30033BCF2C65F9E4007DBE0A /* RegistrationViewModel.swift in Sources */,
 				30033BCC2C65F9C8007DBE0A /* Registrationview.swift in Sources */,
 				30033BDE2C65FEA4007DBE0A /* PhotoPicker.swift in Sources */,
+				30033BE92C661383007DBE0A /* Teacher.swift in Sources */,
 				30033BB02C65EBAF007DBE0A /* AppDelegate.swift in Sources */,
 				30033BB22C65EBAF007DBE0A /* SceneDelegate.swift in Sources */,
 				30033BE42C6606D0007DBE0A /* MainView.swift in Sources */,
 				30033BD92C65FB25007DBE0A /* CoreDataManager.swift in Sources */,
+				30033BEB2C661468007DBE0A /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
