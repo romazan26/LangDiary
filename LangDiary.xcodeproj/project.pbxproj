@@ -32,6 +32,8 @@
 		30033BF72C664852007DBE0A /* WordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BF62C664852007DBE0A /* WordCellView.swift */; };
 		30033BF92C664B0D007DBE0A /* WordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BF82C664B0D007DBE0A /* WordTextFieldView.swift */; };
 		30033BFB2C664D44007DBE0A /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30033BFA2C664D44007DBE0A /* CircleButtonView.swift */; };
+		305932942C680C7700C024C0 /* AddHomeWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305932932C680C7700C024C0 /* AddHomeWorkView.swift */; };
+		305932962C68120C00C024C0 /* HomeWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305932952C68120C00C024C0 /* HomeWorkCell.swift */; };
 		3066B8D72C666780002F2715 /* TeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066B8D62C666780002F2715 /* TeacherView.swift */; };
 		3066B8DA2C669CE3002F2715 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066B8D92C669CE3002F2715 /* SettingsView.swift */; };
 		3066B8DF2C669D38002F2715 /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066B8DB2C669D38002F2715 /* webView.swift */; };
@@ -69,6 +71,8 @@
 		30033BF62C664852007DBE0A /* WordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCellView.swift; sourceTree = "<group>"; };
 		30033BF82C664B0D007DBE0A /* WordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTextFieldView.swift; sourceTree = "<group>"; };
 		30033BFA2C664D44007DBE0A /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		305932932C680C7700C024C0 /* AddHomeWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomeWorkView.swift; sourceTree = "<group>"; };
+		305932952C68120C00C024C0 /* HomeWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkCell.swift; sourceTree = "<group>"; };
 		3066B8D62C666780002F2715 /* TeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherView.swift; sourceTree = "<group>"; };
 		3066B8D92C669CE3002F2715 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3066B8DB2C669D38002F2715 /* webView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			children = (
 				30033BE62C6611FC007DBE0A /* TeacherCell.swift */,
 				30033BF62C664852007DBE0A /* WordCellView.swift */,
+				305932952C68120C00C024C0 /* HomeWorkCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				3066B8E52C66A00B002F2715 /* HomeWorkView.swift */,
+				305932932C680C7700C024C0 /* AddHomeWorkView.swift */,
 			);
 			path = HomeWork;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				30033BD32C65FA90007DBE0A /* CustomButtonView.swift in Sources */,
 				30033BD12C65FA16007DBE0A /* CustomTextFieldView.swift in Sources */,
 				30033BE22C66042D007DBE0A /* User.swift in Sources */,
+				305932942C680C7700C024C0 /* AddHomeWorkView.swift in Sources */,
 				3066B8DF2C669D38002F2715 /* webView.swift in Sources */,
 				30033BEE2C661BF3007DBE0A /* AddTeacherView.swift in Sources */,
 				3066B8E12C669D38002F2715 /* WebViewPage.swift in Sources */,
@@ -320,6 +327,7 @@
 				3066B8DA2C669CE3002F2715 /* SettingsView.swift in Sources */,
 				30033BE72C6611FC007DBE0A /* TeacherCell.swift in Sources */,
 				30033BF92C664B0D007DBE0A /* WordTextFieldView.swift in Sources */,
+				305932962C68120C00C024C0 /* HomeWorkCell.swift in Sources */,
 				3066B8E62C66A00B002F2715 /* HomeWorkView.swift in Sources */,
 				30033BCF2C65F9E4007DBE0A /* RegistrationViewModel.swift in Sources */,
 				30033BCC2C65F9C8007DBE0A /* Registrationview.swift in Sources */,

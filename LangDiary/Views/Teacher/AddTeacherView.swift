@@ -49,19 +49,27 @@ struct AddTeacherView: View {
                     
                     Spacer()
                     
+                    //MARK: - Title
                     Text("New teacher")
                         .foregroundStyle(.white)
                         .font(.system(size: 20, weight: .heavy))
                     
                     Spacer()
                     
-                    Button(action: {}, label: {
-                        Image(systemName: "trash.fill")
-                            .resizable()
-                            .foregroundStyle(.gray)
-                            .frame(width: 14, height: 18)
-                        
-                    }).frame(width: 38, height: 38)
+                    
+                    //MARK: - Delete button
+                    if isEdite{
+                        Button(action: {
+                            vm.deleteTeacher()
+                            vm.isPresentEdiiteteacher.toggle()
+                        }, label: {
+                            Image(systemName: "trash.fill")
+                                .resizable()
+                                .foregroundStyle(.gray)
+                                .frame(width: 14, height: 18)
+                            
+                        }).frame(width: 38, height: 38)
+                    }
                 }
                 
                 //MARK: - Photo
@@ -107,7 +115,8 @@ struct AddTeacherView: View {
             }.padding()
         }.onTapGesture {
             keyboardIsFocus = false
-        }.onAppear(perform: {
+        }
+        .onAppear(perform: {
             print(isEdite)
             if isEdite {
                 vm.fillData()

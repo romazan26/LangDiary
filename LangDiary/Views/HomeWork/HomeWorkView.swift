@@ -36,15 +36,24 @@ struct HomeWorkView: View {
                     
                 }
                 
+                //MARK: - HomeWork list
+                ScrollView {
+                    ForEach(vm.homeWorks) { homeWork in
+                        HomeWorkCell(homeWork: homeWork)
+                    }
+                }
                 Spacer()
                 
+                //MARK: - Add button
                 Button(action: {
-                    vm.isPresentHomeWork.toggle()
+                    vm.isPresentAddHomeWork.toggle()
                 }, label: {
                     CustomButtonView(text: "Add new")
                 })
             }.padding()
-        }
+        }.sheet(isPresented: $vm.isPresentAddHomeWork, content: {
+            AddHomeWorkView(vm: vm)
+        })
     }
 }
 

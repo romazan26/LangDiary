@@ -15,6 +15,7 @@ final class MainViewModel: ObservableObject{
     
     @Published var teachers:[Teacher] = []
     @Published var words: [Word] = []
+    @Published var homeWorks: [HomeWork] = []
     
     //Words
     @Published var simpleWord1 = ""
@@ -27,6 +28,11 @@ final class MainViewModel: ObservableObject{
     @Published var simpleTeacherPhoto: UIImage = UIImage(resource: .noFotoTeacher)
     @Published var simpleTeacher: Teacher!
     
+    //HomeWork
+    @Published var simpleHomeWorkExercise = ""
+    @Published var simpleHomeWorkTask = ""
+    @Published var simpleHomeWorkDate = Date()
+    
     //Is present
     @Published var isPresentAddteacher = false
     @Published var isPresentEdiiteteacher = false
@@ -34,13 +40,22 @@ final class MainViewModel: ObservableObject{
     @Published var isPresentedAllTeacher = false
     @Published var isPresentSetting = false
     @Published var isPresentHomeWork = false
+    @Published var isPresentAddHomeWork = false
     
     init(){
         getTeachers()
         getWords()
+        getHomeWork()
     }
     
-    //MARK: - 
+    //MARK: - Delete data
+    func deleteTeacher(){
+        if simpleTeacher != nil{
+            manager.context.delete(simpleTeacher)
+            clearDataTeacher()
+            save()
+        }
+    }
     
     //MARK: - Update data
     func updateTeacher(){
@@ -79,6 +94,16 @@ final class MainViewModel: ObservableObject{
         clearDataTeacher()
     }
     
+    func addHomeWork(){
+        let newHomeWork = HomeWork(context: manager.context)
+        newHomeWork.exercise = simpleHomeWorkExercise
+        newHomeWork.task = simpleHomeWorkTask
+        newHomeWork.date = simpleHomeWorkDate
+        
+        save()
+        clearDataHomeWork()
+    }
+    
     func addAllWords(){
         addWord(word: simpleWord1)
         addWord(word: simpleWord2)
@@ -99,6 +124,15 @@ final class MainViewModel: ObservableObject{
         
         do{
             teachers = try manager.context.fetch(request)
+        }catch let error{
+            print("Get data error \(error.localizedDescription)")
+        }
+    }
+    
+    func getHomeWork(){
+        let request = NSFetchRequest<HomeWork>(entityName: "HomeWork")
+        do{
+            homeWorks = try manager.context.fetch(request)
         }catch let error{
             print("Get data error \(error.localizedDescription)")
         }
@@ -126,14 +160,22 @@ final class MainViewModel: ObservableObject{
         simpleWord2 = ""
     }
     
+    func clearDataHomeWork(){
+        simpleHomeWorkExercise = ""
+        simpleHomeWorkTask = ""
+        simpleHomeWorkDate = Date()
+    }
+    
     //MARK: - Save data
     func save(){
         teachers.removeAll()
         words.removeAll()
+        homeWorks.removeAll()
         
         manager.save()
         
         getTeachers()
         getWords()
+        getHomeWork()
     }
 }
